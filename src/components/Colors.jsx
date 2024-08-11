@@ -5,7 +5,7 @@ export default function Colors() {
   const [colors, setColors] = useState(['kırmızı', 'yeşil', 'mavi']);
 
   const handleClick = () => {
-    setColors([...colors, 'gri'])
+    setColors((prev) => [...prev, 'gri'])
   }
 
   return (

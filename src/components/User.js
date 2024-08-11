@@ -8,8 +8,8 @@ export default function User() {
 
       {user.name} {user.surname}
       <div>
-        <button onClick={() => setUser({ ...user, name: 'Güler' })}>Adı Değiştir</button>
-        <button onClick={() => setUser({ ...user, surname: 'Duman' })}>Soyadı Değiştir</button>
+        <button onClick={() => setUser((prev) => ({ ...prev, name: 'Güler' }))}>Adı Değiştir</button>
+        <button onClick={() => setUser((prev) => ({ ...prev, surname: 'Duman' }))}>Soyadı Değiştir</button>
       </div>
     </div>
   )

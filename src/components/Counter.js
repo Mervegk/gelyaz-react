@@ -6,7 +6,7 @@ function Counter() {
   return (
     <div>
       <h1>{counter}</h1>
-      <button onClick={() => setCounter(counter + amount)}>Arttır</button>
+      <button onClick={() => setCounter(prev => prev + amount)}>Arttır</button>
       <hr />
       <p>Arttırma: +{amount} </p>
       <button onClick={() => setAmount(1)}>+1</button>
