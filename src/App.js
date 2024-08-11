@@ -10,13 +10,7 @@ const data = {
 function App() {
   return (
     <div>
-      <User
-        title="Kullanıcı"
-        data={data}
-        friends={['Burak', 'Yağmur']}
-      />
-      <hr />
-      <Counter />
+      <User />
     </div>
   );
 }
