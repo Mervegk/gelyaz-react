@@ -8,10 +8,12 @@ import Form from './components/Form';
 function App() {
   return (
     <div>
-      {/*  <User />
-      <Counter /> 
-      <Colors />  */}
+      {/*  
+      <User />
+      <Colors />  
       <Form />
+      */}
+      <Counter />
     </div>
   );
 }

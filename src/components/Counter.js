@@ -1,8 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Counter() {
   const [counter, setCounter] = useState(0);
   const [amount, setAmount] = useState(1);
+  useEffect(() => {
+    console.log('Bir state değişti');
+  });
+  /* useEffect(() => {
+    console.log("Comp mount edildi");
+  }, []); */
+  useEffect(() => {
+    console.log('Counter veya Amount değişti');
+
+  }, [counter, amount])
   return (
     <div>
       <h1>{counter}</h1>
