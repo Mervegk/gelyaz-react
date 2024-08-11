@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
-import User from './components/User';
+/* import User from './components/User';
 import Colors from './components/Colors';
-import Form from './components/Form';
+import Form from './components/Form'; */
 
 
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div>
       {/*  
@@ -13,7 +15,11 @@ function App() {
       <Colors />  
       <Form />
       */}
-      <Counter />
+
+      {
+        isVisible && <Counter />
+      }
+      <button onClick={() => setIsVisible(!isVisible)}>Göster/Gizle</button>
     </div>
   );
 }
