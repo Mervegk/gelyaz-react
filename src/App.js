@@ -1,5 +1,6 @@
 import './App.css';
 import User from './components/User';
+import Counter from './components/Counter';
 const data = {
   fullName: "Merve Keleş",
   city: "İstanbul",
@@ -15,6 +16,7 @@ function App() {
         friends={['Burak', 'Yağmur']}
       />
       <hr />
+      <Counter />
     </div>
   );
 }
