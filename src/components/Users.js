@@ -14,6 +14,7 @@ export default function Users() {
         axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)
           .then(res => setPosts(res.data))
       })
+      .catch((error) => console.log(error))
       .finally(() => setLoading(false))
   }, []) */
 
@@ -22,12 +23,17 @@ export default function Users() {
   }, [])
 
   const getData = async () => {
-    const { data: users } = await axios("https://jsonplaceholder.typicode.com/users");
-    const { data: posts } = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
+    try {
+      const { data: users } = await axios("https://jsonplaceholder.typicode.com/users");
+      const { data: posts } = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
 
-    setLoading(false)
-    setUsers(users);
-    setPosts(posts);
+      setLoading(false)
+      setUsers(users);
+      setPosts(posts);
+    }
+    catch (error) {
+      console.log(error)
+    }
   }
 
   return (
