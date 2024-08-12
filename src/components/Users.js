@@ -16,8 +16,8 @@ export default function Users() {
         setUsers(users);
         setPosts(posts);
       }
-      catch (err) {
-        console.log(err)
+      catch (error) {
+        console.log(error)
       }
     })();
   }, [])
