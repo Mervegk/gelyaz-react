@@ -9,9 +9,7 @@ export default function Header() {
         <li><Link to="/">Ana sayfa</Link></li>
         <li><Link to="users">Kullanıcılar</Link></li>
         <li><Link to="contact">İletişim</Link></li>
-        <li onClick={() => navigate(-1)}>
-          navigate: iletişim
-        </li>
+        <li onClick={() => navigate(-1)}>Geri</li>
       </ul>
     </nav>
   )
