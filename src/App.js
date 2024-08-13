@@ -1,29 +1,23 @@
 //import { useState } from 'react';
 import './App.css';
-import Users from './components/Users';
-/* import Counter from './components/Counter';
-import User from './components/User';
-import Colors from './components/Colors';
-import Form from './components/Form'; */
-
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home'
+import Users from './pages/Users';
+import Contact from './pages/Contact';
 
 function App() {
-  /* const [isVisible, setIsVisible] = useState(false); */
+
   return (
-    <div>
-      {/*  
-      <User />
-      <Colors />  
-      <Form />
-      */}
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path='users' element={<Users />} />
+        <Route path='contact' element={<Contact />} />
+      </Routes>
 
-      {/* {
-        isVisible && <Counter />
-      }
-      <button onClick={() => setIsVisible(!isVisible)}>Göster/Gizle</button> */}
-
-      <Users />
-    </div>
+    </BrowserRouter>
   );
 }
 
