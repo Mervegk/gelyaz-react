@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 export default function Users() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    axios("https://jsonplaceholder.typicode.com/users")
-      .then(res => setUsers(res.data))
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => setUsers(data))
   }, [])
 
   return (
@@ -16,7 +16,7 @@ export default function Users() {
       {
         users.map(user =>
           <div key={user.id}>
-            <Link to={`${user.id}`}>{user.name}</Link>
+            <Link to={`${user.id}`} state={user}>{user.name}</Link>
           </div>
         )
       }
