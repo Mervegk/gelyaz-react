@@ -9,6 +9,7 @@ import Login from './pages/Auth/Login';
 import DashBoardLayout from './layouts/DashBoardLayout';
 import AuthLayout from './layouts/AuthLayout';
 import Register from './pages/Auth/Register';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route index element={<Login />} />
           <Route path='register' element={<Register />} />
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
