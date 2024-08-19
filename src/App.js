@@ -1,14 +1,14 @@
 //import { useState } from 'react';
 import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './pages/Home'
-import Users from './pages/Users';
-import Contact from './pages/Contact';
+import Home from './pages/Dashboard/Home'
+import Users from './pages/Dashboard/Users';
+import Contact from './pages/Dashboard/Contact';
 import UserDetail from './components/UserDetail';
-import Login from './pages/Login';
+import Login from './pages/Auth/Login';
 import DashBoardLayout from './layouts/DashBoardLayout';
 import AuthLayout from './layouts/AuthLayout';
+import Register from './pages/Auth/Register';
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
         </Route>
         <Route path='auth' element={<AuthLayout />}>
           <Route index element={<Login />} />
+          <Route path='register' element={<Register />} />
         </Route>
       </Routes>
     </BrowserRouter>
