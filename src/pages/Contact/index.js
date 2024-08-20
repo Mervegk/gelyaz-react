@@ -11,7 +11,10 @@ export default function Contact() {
       message: ''
     },
     onSubmit: async (values, bag) => {
-      await new Promise(r => setTimeout(r, 500))
+      await new Promise(r => setTimeout(r, 500));
+      if (values.email === 'test@test.com') {
+        return bag.setErrors({ email: 'Bu e-posta adresi daha önce kullanılmış.' })
+      }
       console.log(values);
       bag.resetForm();
     },
