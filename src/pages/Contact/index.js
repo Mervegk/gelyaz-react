@@ -4,7 +4,7 @@ import validations from './validations'
 
 export default function Contact() {
 
-  const { handleSubmit, handleChange, values, isSubmitting, errors } = useFormik({
+  const { handleSubmit, handleChange, handleBlur, values, isSubmitting, errors, touched } = useFormik({
     initialValues: {
       name: '',
       email: '',
@@ -29,9 +29,10 @@ export default function Contact() {
               <input id='name' name='name' placeholder='Name'
                 onChange={handleChange}
                 value={values.name}
+                onBlur={handleBlur}
                 className='form-input' />
               {
-                errors.name && <div className='error'>{errors.name}</div>
+                errors.name && touched.name && <div className='error'>{errors.name}</div>
               }
             </div>
             <div className='form-input-area'>
@@ -39,9 +40,10 @@ export default function Contact() {
               <input id='email' name='email' placeholder='Email'
                 onChange={handleChange}
                 value={values.email}
+                onBlur={handleBlur}
                 className='form-input' />
               {
-                errors.email && <div className='error'>{errors.email}</div>
+                errors.email && touched.email && <div className='error'>{errors.email}</div>
               }
             </div>
             <div className='form-input-area'>
@@ -49,9 +51,10 @@ export default function Contact() {
               <textarea id='message' name='message' placeholder='Message'
                 onChange={handleChange}
                 value={values.message}
+                onBlur={handleBlur}
                 className='form-input' />
               {
-                errors.message && <div className='error'>{errors.message}</div>
+                errors.message && touched.message && <div className='error'>{errors.message}</div>
               }
             </div>
           </div>
