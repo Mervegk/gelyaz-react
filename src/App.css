@@ -27,6 +27,13 @@ nav ul li a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .form-input-area {
