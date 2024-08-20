@@ -1,19 +1,21 @@
 import React from 'react'
 import { useFormik } from 'formik';
+import validations from './validations'
 
 export default function Contact() {
 
-  const { handleSubmit, handleChange, values, isSubmitting } = useFormik({
+  const { handleSubmit, handleChange, values, isSubmitting, errors } = useFormik({
     initialValues: {
       name: '',
       email: '',
       message: ''
     },
     onSubmit: async (values, bag) => {
-      await new Promise(r => setTimeout(r, 1000))
+      await new Promise(r => setTimeout(r, 500))
       console.log(values);
       bag.resetForm();
     },
+    validationSchema: validations
   });
 
   return (
@@ -28,6 +30,9 @@ export default function Contact() {
                 onChange={handleChange}
                 value={values.name}
                 className='form-input' />
+              {
+                errors.name && <div className='error'>{errors.name}</div>
+              }
             </div>
             <div className='form-input-area'>
               <label htmlFor='email'>Email</label>
@@ -35,6 +40,9 @@ export default function Contact() {
                 onChange={handleChange}
                 value={values.email}
                 className='form-input' />
+              {
+                errors.email && <div className='error'>{errors.email}</div>
+              }
             </div>
             <div className='form-input-area'>
               <label htmlFor='message'>Message</label>
@@ -42,6 +50,9 @@ export default function Contact() {
                 onChange={handleChange}
                 value={values.message}
                 className='form-input' />
+              {
+                errors.message && <div className='error'>{errors.message}</div>
+              }
             </div>
           </div>
           <button type="submit">Submit</button>

@@ -45,3 +45,7 @@ nav ul li a {
 .form-input {
   padding: 4px;
 }
+
+.error {
+  color: red;
+}
