@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from './pages/Dashboard/Home'
 import Users from './pages/Dashboard/Users';
+import Counter from './pages/Dashboard/Counter';
 import Contact from './pages/Contact';
 import UserDetail from './components/UserDetail';
 import Login from './pages/Auth/Login';
@@ -21,6 +22,7 @@ function App() {
           <Route path='users' element={<Users />} />
           <Route path='users/:id' element={<UserDetail />} />
           <Route path='contact' element={<Contact />} />
+          <Route path='counter' element={<Counter />} />
         </Route>
         <Route path='auth' element={<AuthLayout />}>
           <Route index element={<Login />} />
